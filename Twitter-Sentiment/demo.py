@@ -28,17 +28,16 @@ def getSentiment(analysis):
 #and label each one as either 'positive' or 'negative', depending on the sentiment 
 #You can decide the sentiment polarity threshold yourself
 
-# with open(name+'.csv', 'w') as csvFile:
-#     writer = csv.writer(csvFile)
-#     writer.writerows(csvData)
-# csvFile.close()
+with open(name+'.csv', 'w') as csvFile:
+    for tweet in public_tweets:
+        if 'RT @' not in tweet.text:
+            analysis = TextBlob(tweet.text)
+            data = [[tweet.user.screen_name, tweet.text, getSentiment(analysis)]]
+            writer = csv.writer(csvFile)
+            writer.writerows(data)
+    csvFile.close()
 
-for tweet in public_tweets:
-    if 'RT @' not in tweet.text:
-        print("Screen Name: ", tweet.user.screen_name)
-        print("Text: ", tweet.text,"\n\n")
-        analysis = TextBlob(tweet.text)
-        print("Analysis: ", getSentiment(analysis))
+
     
     #Step 4 Perform Sentiment Analysis on Tweets
     # analysis = TextBlob(tweet.text)

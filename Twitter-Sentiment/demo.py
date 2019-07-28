@@ -3,7 +3,7 @@ from textblob import TextBlob
 import csv
 
 # Step 1 - Authenticate
-consumer_key= 'JYcaS7LrGZMB9w6z4MvD5JiAa'
+consumer_key= 'JYcaS7LrGZMB9w6z4MvD5JiAaL'
 consumer_secret= 'ljyGM2ItUtPUTREWNZiMl7GJjLv84pBv7tx59jMzDRdrWzcbjG'
 
 access_token= '2162673698-5dMo4aqZhwrvWDBwjhg3TrQW5QDfWZarbX5WnQk'
@@ -23,9 +23,9 @@ def getSentiment(analysis):
         return 'Positive'
     else:
         return 'Negative'
-        
+
 #CHALLENGE - Instead of printing out each tweet, save each Tweet to a CSV file
-#and label each one as either 'positive' or 'negative', depending on the sentiment 
+#and label each one as either 'positive' or 'negative', depending on the sentiment
 #You can decide the sentiment polarity threshold yourself
 
 with open(name+'.csv', 'w') as csvFile:
@@ -38,7 +38,7 @@ with open(name+'.csv', 'w') as csvFile:
     csvFile.close()
 
 
-    
+
     #Step 4 Perform Sentiment Analysis on Tweets
     # analysis = TextBlob(tweet.text)
     # print(analysis.sentiment)
